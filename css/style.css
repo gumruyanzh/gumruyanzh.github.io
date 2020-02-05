@@ -384,6 +384,14 @@ li > a:only-child:after { content: ''; }
     color: #eee;
     text-transform: capitalize;
 }
+.w3ls_banner_txt ul {
+    font-size: 20px;
+    color: #eee;
+    text-transform: capitalize;
+}
+.w3ls_banner_txt ul li{
+    margin: 4px;
+}
 .banner-text-w3pvt {
     padding: 16vw 0 11vw;
     box-sizing: border-box;
