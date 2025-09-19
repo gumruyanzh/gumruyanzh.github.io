@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavier Framework - Enterprise SCRUM Development with AI</title>
+    <meta name="description" content="Xavier Framework - AI-powered SCRUM development framework with automated testing and clean code enforcement.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        .code-block {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            padding: 2rem;
+            border: 2px solid var(--black);
+        }
+        .command-example {
+            background: var(--gray-100);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Xavier</div>
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">← Back to Portfolio</a></li>
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#installation" class="nav-link">Installation</a></li>
+                <li><a href="#commands" class="nav-link">Commands</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="overview" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-name">Xavier Framework</span>
+                </h1>
+                <p class="hero-subtitle">Enterprise SCRUM Development with AI</p>
+                <p class="hero-description">
+                    Transform your development workflow with AI-powered agents that enforce test-driven development, clean code principles, and SCRUM methodology.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://github.com/gumruyan/xavier" target="_blank" class="btn btn-primary">View on GitHub</a>
+                    <a href="#installation" class="btn btn-secondary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="about">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🤖 AI-Powered Agents</h3>
+                    <p>Specialized agents for frontend, backend, database, and DevOps tasks. Each agent follows strict coding standards and best practices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧪 Test-First Development</h3>
+                    <p>Enforces TDD with 100% test coverage requirement. Tests must be written before implementation and all tests must pass.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📋 SCRUM Methodology</h3>
+                    <p>Built-in sprint management, user story tracking, and backlog prioritization following strict SCRUM principles.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✨ Clean Code Enforcement</h3>
+                    <p>Automatic validation of SOLID principles, design patterns, and clean code standards in every commit.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Sequential Execution</h3>
+                    <p>Tasks are executed one at a time to ensure quality and maintain focus on single responsibility.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Progress Tracking</h3>
+                    <p>Real-time visibility into sprint progress, story points, and team velocity metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="projects">
+        <div class="container">
+            <h2 class="section-title">Installation</h2>
+            <div class="about-content">
+                <p class="lead">Get started with Xavier Framework in minutes.</p>
+
+                <h3>Quick Start</h3>
+                <div class="code-block">
+# Clone the repository
+git clone https://github.com/gumruyan/xavier.git
+cd xavier
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Initialize Xavier
+./xavier init
+                </div>
+
+                <h3>Create Your First Project</h3>
+                <div class="code-block">
+# Create a new project
+./xavier create-project '{
+  "name": "MyApp",
+  "description": "A revolutionary application",
+  "project_type": "web"
+}'
+
+# Create a user story
+./xavier create-story '{
+  "title": "User Authentication",
+  "as_a": "user",
+  "i_want": "to log in securely",
+  "so_that": "I can access my account",
+  "acceptance_criteria": ["Email validation", "Password check"],
+  "priority": "High"
+}'
+
+# Start development
+./xavier start-sprint
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commands Section -->
+    <section id="commands" class="about">
+        <div class="container">
+            <h2 class="section-title">Commands</h2>
+            <div class="about-content">
+                <h3>Project Management</h3>
+                <div class="command-example">
+/create-project - Initialize a new Xavier project
+/learn-project - Analyze existing codebase
+/tech-stack-analyze - Detect and analyze tech stack
+                </div>
+
+                <h3>Story Management</h3>
+                <div class="command-example">
+/create-story - Create a user story
+/create-task - Add task to story
+/create-bug - Report a bug
+/show-backlog - View product backlog
+/estimate-story - Estimate story points
+                </div>
+
+                <h3>Sprint Management</h3>
+                <div class="command-example">
+/create-sprint - Plan a new sprint
+/start-sprint - Begin sprint execution
+/end-sprint - Close current sprint
+/show-sprint - View sprint details
+                </div>
+
+                <h3>Development</h3>
+                <div class="command-example">
+/assign-task - Assign task to agent
+/review-code - Trigger code review
+/generate-report - Create progress report
+/create-agent - Configure new agent
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">Philosophy</h2>
+            <div class="about-content">
+                <p class="lead">
+                    Xavier Framework embodies enterprise-grade development practices through automation.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <h3>Test-Driven</h3>
+                        <p>Every feature starts with a failing test. Implementation follows to make it pass.</p>
+                    </div>
+                    <div class="highlight">
+                        <h3>Clean Architecture</h3>
+                        <p>SOLID principles and design patterns are enforced automatically.</p>
+                    </div>
+                    <div class="highlight">
+                        <h3>Continuous Quality</h3>
+                        <p>Every commit is validated for code quality, test coverage, and standards compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributing Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contributing</h2>
+            <div class="contact-content">
+                <p class="contact-intro">
+                    Xavier Framework is open source and welcomes contributions from the community.
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/gumruyan/xavier" target="_blank" class="contact-link">
+                        <span class="contact-icon">gh</span>
+                        GitHub Repository
+                    </a>
+                    <a href="https://github.com/gumruyan/xavier/issues" target="_blank" class="contact-link">
+                        <span class="contact-icon">!</span>
+                        Report Issues
+                    </a>
+                    <a href="https://github.com/gumruyan/xavier/pulls" target="_blank" class="contact-link">
+                        <span class="contact-icon">PR</span>
+                        Pull Requests
+                    </a>
+                    <a href="mailto:xavier@gumruyan.com" class="contact-link">
+                        <span class="contact-icon">@</span>
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Xavier Framework by Zhirayr Gumruyan. Open Source under MIT License.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
