@@ -169,27 +169,11 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 600px;
 }
 
-.hero-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero-profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid var(--black);
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
 .hero-full-name {
     font-size: clamp(3rem, 8vw, 5.5rem);
     font-weight: 900;
     letter-spacing: -0.04em;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
     line-height: 1;
     background: linear-gradient(135deg, var(--black) 0%, var(--gray-600) 100%);
     -webkit-background-clip: text;
@@ -234,6 +218,9 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid var(--gray-200);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-visual-gradient::before {
@@ -245,6 +232,18 @@ h1, h2, h3, h4, h5, h6 {
     height: 200%;
     background: conic-gradient(from 0deg, transparent, rgba(0, 0, 0, 0.05), transparent);
     animation: rotate 10s linear infinite;
+    z-index: 1;
+}
+
+.hero-profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 6px solid var(--white);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes rotate {
@@ -913,15 +912,10 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 1rem;
     }
 
-    .hero-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
     .hero-profile-image {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
+        border-width: 4px;
     }
 
     .hero-full-name {
