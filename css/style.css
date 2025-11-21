@@ -169,11 +169,27 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 600px;
 }
 
+.hero-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--black);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
 .hero-full-name {
     font-size: clamp(3rem, 8vw, 5.5rem);
     font-weight: 900;
     letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     line-height: 1;
     background: linear-gradient(135deg, var(--black) 0%, var(--gray-600) 100%);
     -webkit-background-clip: text;
@@ -382,14 +398,6 @@ h1, h2, h3, h4, h5, h6 {
 .timeline-content:hover {
     transform: translateX(10px);
     border-left-color: var(--gray-800);
-}
-
-.timeline-year {
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    color: var(--gray-600);
-    margin-bottom: 0.5rem;
 }
 
 .timeline-title {
@@ -903,6 +911,17 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
     .container {
         padding: 0 1rem;
+    }
+
+    .hero-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .hero-profile-image {
+        width: 100px;
+        height: 100px;
     }
 
     .hero-full-name {
