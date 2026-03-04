@@ -61,6 +61,24 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://gumruyan.com/news/campaign-announcement.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gumruyan.com/news/housing-affordability.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gumruyan.com/news/immigrant-journey.html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gumruyan.com/privacy.html</loc>
     <lastmod>2026-03-04</lastmod>
     <changefreq>yearly</changefreq>
