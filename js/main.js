@@ -86,6 +86,23 @@
 
     if (!navToggle || !navMenu) return;
 
+    // On mobile, move nav-actions inside nav-menu for proper dropdown flow
+    var navActions = document.querySelector('.nav-actions');
+    function handleMobileActions() {
+      if (window.innerWidth <= 768 && navActions && navActions.parentNode !== navMenu) {
+        navMenu.appendChild(navActions);
+        navActions.classList.add('nav-actions-mobile');
+      } else if (window.innerWidth > 768 && navActions && navActions.classList.contains('nav-actions-mobile')) {
+        var navContainer = document.querySelector('.nav-container');
+        if (navContainer) {
+          navContainer.insertBefore(navActions, navToggle);
+        }
+        navActions.classList.remove('nav-actions-mobile');
+      }
+    }
+    handleMobileActions();
+    window.addEventListener('resize', handleMobileActions);
+
     // Toggle menu on hamburger click
     navToggle.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -146,11 +163,19 @@
       var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      countdownEl.textContent =
-        days + ' days, ' +
-        hours + ' hours, ' +
-        minutes + ' minutes, ' +
-        seconds + ' seconds until Primary Election';
+      // Shorter text on mobile to prevent wrapping
+      if (window.innerWidth <= 480) {
+        countdownEl.textContent = days + ' days until Primary Election';
+      } else if (window.innerWidth <= 768) {
+        countdownEl.textContent =
+          days + 'd ' + hours + 'h ' + minutes + 'm until Primary';
+      } else {
+        countdownEl.textContent =
+          days + ' days, ' +
+          hours + ' hours, ' +
+          minutes + ' minutes, ' +
+          seconds + ' seconds until Primary Election';
+      }
     }
 
     update();
@@ -166,6 +191,17 @@
     // Auto-dismiss if previously closed this session
     if (sessionStorage.getItem(STORAGE_KEY) === '1') {
       document.body.classList.add('announcement-dismissed');
+    }
+
+    // Dynamically measure announcement bar height and sync CSS variable
+    var bar = document.getElementById('announcement-bar');
+    if (bar && !document.body.classList.contains('announcement-dismissed')) {
+      function syncBarHeight() {
+        var h = bar.offsetHeight;
+        document.documentElement.style.setProperty('--announcement-height', h + 'px');
+      }
+      syncBarHeight();
+      window.addEventListener('resize', syncBarHeight);
     }
 
     var closeBtn = document.querySelector('.announcement-close');
