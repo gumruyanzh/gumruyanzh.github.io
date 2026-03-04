@@ -3543,6 +3543,21 @@ select:focus-visible {
     padding-bottom: 3rem;
 }
 
+.campaign-hero .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.campaign-hero .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .announcement-dismissed .campaign-hero {
     padding-top: calc(var(--nav-height) + 3rem);
 }
