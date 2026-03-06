@@ -250,11 +250,30 @@
       fadeObserver.observe(el);
     });
 
-    // Safety net: force-show any fade-in elements still invisible after 1.5s
+    // Safety net: force-show all animated elements after 1.5s
     // Handles edge cases where IntersectionObserver doesn't fire
     setTimeout(function () {
+      // Force fade-in elements visible
       document.querySelectorAll('.fade-in:not(.visible)').forEach(function (el) {
         el.classList.add('visible');
+      });
+      // Force grid cards visible (inline styles override CSS, so clear them)
+      var allCards = document.querySelectorAll(
+        '.credential-card, .venture-card, .publication-card, .proof-quote, ' +
+        '.issue-card, .event-card, .news-card, .team-card'
+      );
+      allCards.forEach(function (card) {
+        if (card.style.opacity === '0' || card.style.opacity === '') {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }
+      });
+      // Force timeline items visible
+      document.querySelectorAll('.timeline-item').forEach(function (item) {
+        if (item.style.opacity === '0') {
+          item.style.opacity = '1';
+          item.style.transform = 'translateX(0)';
+        }
       });
     }, 1500);
 
