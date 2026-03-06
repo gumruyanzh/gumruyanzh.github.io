@@ -402,7 +402,6 @@ p {
 }
 
 .campaign-hero {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     padding-top: calc(var(--nav-height) + var(--announcement-height));
@@ -625,17 +624,17 @@ p {
    =================================== */
 
 .section-light {
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: var(--white);
 }
 
 .section-gray {
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: var(--light-gray);
 }
 
 .section-navy {
-    padding: 5rem 0;
+    padding: 4rem 0;
     background: var(--navy);
     color: var(--white);
 }
@@ -2873,7 +2872,7 @@ p {
     .section-light,
     .section-gray,
     .section-navy {
-        padding: 3.5rem 0;
+        padding: 3rem 0;
     }
 
     .email-form {
@@ -2989,7 +2988,7 @@ p {
     .section-light,
     .section-gray,
     .section-navy {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
     }
 
     .event-meta {
@@ -3295,12 +3294,12 @@ select:focus-visible {
 
 .page-header {
     text-align: center;
-    padding-top: calc(var(--nav-height) + var(--announcement-height) + 3rem);
-    padding-bottom: 3rem;
+    padding-top: calc(var(--nav-height) + var(--announcement-height) + 2.5rem);
+    padding-bottom: 2.5rem;
 }
 
 .announcement-dismissed .page-header {
-    padding-top: calc(var(--nav-height) + 3rem);
+    padding-top: calc(var(--nav-height) + 2.5rem);
 }
 
 .page-header .page-title,
