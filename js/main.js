@@ -250,6 +250,14 @@
       fadeObserver.observe(el);
     });
 
+    // Safety net: force-show any fade-in elements still invisible after 1.5s
+    // Handles edge cases where IntersectionObserver doesn't fire
+    setTimeout(function () {
+      document.querySelectorAll('.fade-in:not(.visible)').forEach(function (el) {
+        el.classList.add('visible');
+      });
+    }, 1500);
+
     // Staggered card animations for grids
     var cardSelectors = [
       '.credential-card',
