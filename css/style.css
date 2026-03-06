@@ -1073,9 +1073,21 @@ p {
    8. VOLUNTEER FORM
    =================================== */
 
-.volunteer-form {
+.volunteer-form,
+.form-wrapper {
     max-width: 640px;
     margin: 0 auto;
+}
+
+.form-wrapper button[type="submit"] {
+    margin-top: 1.5rem;
+}
+
+.form-privacy-note {
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+    margin-top: 1rem;
+    line-height: 1.5;
 }
 
 .form-group {
@@ -1142,6 +1154,12 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group h4 {
+    grid-column: 1 / -1;
+    margin-bottom: 0.25rem;
 }
 
 .checkbox-group label {
