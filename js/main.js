@@ -250,104 +250,13 @@
       fadeObserver.observe(el);
     });
 
-    // Safety net: force-show all animated elements after 1.5s
+    // Safety net: force-show all animated elements after 1.2s
     // Handles edge cases where IntersectionObserver doesn't fire
     setTimeout(function () {
-      // Force fade-in elements visible
       document.querySelectorAll('.fade-in:not(.visible)').forEach(function (el) {
         el.classList.add('visible');
       });
-      // Force grid cards visible (inline styles override CSS, so clear them)
-      var allCards = document.querySelectorAll(
-        '.credential-card, .venture-card, .publication-card, .proof-quote, ' +
-        '.issue-card, .event-card, .news-card, .team-card'
-      );
-      allCards.forEach(function (card) {
-        if (card.style.opacity === '0' || card.style.opacity === '') {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }
-      });
-      // Force timeline items visible
-      document.querySelectorAll('.timeline-item').forEach(function (item) {
-        if (item.style.opacity === '0') {
-          item.style.opacity = '1';
-          item.style.transform = 'translateX(0)';
-        }
-      });
-    }, 1500);
-
-    // Staggered card animations for grids
-    var cardSelectors = [
-      '.credential-card',
-      '.venture-card',
-      '.publication-card',
-      '.proof-quote',
-      '.issue-card',
-      '.event-card',
-      '.news-card',
-      '.team-card'
-    ].join(', ');
-
-    var gridObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var cards = entry.target.querySelectorAll(cardSelectors);
-            cards.forEach(function (card, i) {
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(15px)';
-              card.style.transition =
-                'opacity 0.4s ease ' + (i * 0.08) + 's, ' +
-                'transform 0.4s ease ' + (i * 0.08) + 's';
-              requestAnimationFrame(function () {
-                requestAnimationFrame(function () {
-                  card.style.opacity = '1';
-                  card.style.transform = 'translateY(0)';
-                });
-              });
-            });
-            gridObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    // Observe grid containers
-    var gridContainers = document.querySelectorAll(
-      '.about-credentials, .ventures-grid, .publications, .proof-grid, ' +
-      '.issues-grid, .events-grid, .news-grid, .team-grid'
-    );
-    gridContainers.forEach(function (container) {
-      gridObserver.observe(container);
-    });
-
-    // Timeline item stagger
-    var timelineItems = document.querySelectorAll('.timeline-item');
-    if (timelineItems.length > 0) {
-      var timelineObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateX(0)';
-              timelineObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      timelineItems.forEach(function (item, i) {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(-20px)';
-        item.style.transition =
-          'opacity 0.5s ease ' + (i * 0.1) + 's, ' +
-          'transform 0.5s ease ' + (i * 0.1) + 's';
-        timelineObserver.observe(item);
-      });
-    }
+    }, 1200);
   }
 
   /* ================================================================== */
