@@ -8,6 +8,7 @@ dist/
 build/
 *.min.js
 *.min.css
+!css/style.min.css
 
 # IDE
 .vscode/
