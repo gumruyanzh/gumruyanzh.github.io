@@ -3630,6 +3630,21 @@ select:focus-visible {
     line-height: 1.6;
 }
 
+.footer-phone {
+    margin-top: 0.5rem;
+}
+
+.footer-phone a {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.footer-phone a:hover {
+    text-decoration: underline;
+}
+
 .footer-links {
     display: flex;
     flex-direction: column;
